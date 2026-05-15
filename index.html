@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SignQuest – NeurIPS 2026</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --accent: #0ea5e9;
+      --dark: #0f172a;
+      --light: #f8fafc;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      background: #fff;
+      line-height: 1.7;
+    }
+    nav {
+      background: var(--dark);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-logo {
+      color: white;
+      font-size: 1.45rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 15px 20px;
+      transition: 0.3s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    header {
+      text-align: center;
+      padding: 5rem 20px 3rem;
+      background: linear-gradient(135deg, #1e3a8a, #0ea5e9);
+      color: white;
+    }
+    h1 { font-size: 3rem; margin: 0.4rem 0; }
+    .subtitle { font-size: 1.5rem; margin: 0; opacity: 0.95; }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2.5rem 20px;
+    }
+    .section { margin: 5rem 0; }
+    h2 {
+      color: var(--primary);
+      border-bottom: 4px solid var(--accent);
+      padding-bottom: 12px;
+      font-size: 2.1rem;
+    }
+
+    .intro-text {
+      font-size: 1.1rem;
+      text-align: justify;
+    }
+
+    .task {
+      background: #f8fafc;
+      padding: 2.2rem;
+      border-radius: 12px;
+      margin-bottom: 3rem;
+      border-left: 7px solid var(--accent);
+    }
+    .video-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+      margin: 30px 0;
+    }
+    
+    .video-item {
+      text-align: center;
+      flex: 1;
+      min-width: 300px;
+      max-width: 420px;
+    }
+    
+    video {
+      width: 240px;            /* Fixed width for consistency */    
+      height: 100%;           /* Fixed height for consistency */
+      object-fit: cover;       /* Ensures video fills nicely without distortion */
+      border-radius: 10px;
+      border: 2px solid #ddd;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      background: #000;        /* Good fallback while loading */
+    }
+    
+    .caption {
+      margin-top: 12px;
+      font-weight: 600;
+      color: var(--primary);
+      min-height: 50px;        /* Keeps captions aligned */
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    th, td {
+      padding: 14px 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background: var(--primary);
+      color: white;
+    }
+    tr:hover {
+      background: #f1f5f9;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 24px;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      margin: 10px 10px 10px 0;
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem;
+      background: #0f172a;
+      color: white;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.4rem; }
+      .video-container { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-container">
+      <a href="#" class="nav-logo">SignQuest 2026</a>
+      <div class="nav-links">
+        <a href="#tasks">Tasks</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#participate">Participate</a>
+        <a href="#organizers">Organizers</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <h1>SignQuest</h1>
+    <p class="subtitle">NeurIPS 2026 Sign Language Competition</p>
+    <p style="margin-top:1.2rem; font-size:1.25rem;">
+      Advancing Sign Language Understanding & Inclusive AI
+    </p>
+  </header>
+
+  <main>
+
+    <!-- Introduction -->
+    <div class="section">
+      <h2>Welcome to SignQuest</h2>
+      <p class="intro-text">
+        SignQuest is a premier competition at <strong>NeurIPS 2026</strong> dedicated to advancing research in 
+        <strong>Sign Language (SL)</strong> processing. With over <strong>63 million</strong> Deaf and Hard-of-Hearing 
+        individuals in India, there is an urgent need for inclusive AI technologies that can bridge the communication 
+        gap between sign language users and the rest of society.
+      </p>
+      <p class="intro-text">
+        This competition introduces <strong>three core tasks</strong>, each with <strong>two tracks</strong> (RGB Video-based and Pose-based), 
+        resulting in <strong>six challenging tracks</strong>. By supporting both rich visual input and compact privacy-preserving 
+        skeletal representations, SignQuest enables systematic exploration of the trade-offs in multimodal sign language modeling.
+      </p>
+      <p class="intro-text">
+        <strong>Our goal</strong> is to drive innovation in spatio-temporal modeling, low-resource multimodal learning, 
+        and gloss-free sign language understanding — ultimately creating real-world assistive technologies for the DHH community.
+      </p>
+    </div>
+
+    <!-- Tasks -->
+    <div id="tasks" class="section">
+      <h2>Competition Tasks</h2>
+
+      <div class="task">
+        <h3>1. Sign Language Translation (ISL → English)</h3>
+        <p>Generate natural English sentences from continuous Indian Sign Language videos or pose sequences (gloss-free).</p>
+        
+        <div class="video-container">
+          <div class="video-item">
+            <video autoplay muted loop playsinline>
+              <source src="assets/The_ban_would_mean_she_can't_compete_in_any_national_or_other_domestic_events.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+              English Translation: "The ban would mean she can't compete in any national or other domestic events"
+            </div>
+          </div>
+        </div>
+
+        <p><strong>Tracks:</strong> Video-to-Text • Pose-to-Text</p>
+        <p><strong>Evaluation:</strong> SacreBLEU (primary), ROUGE-L, chrF</p>
+        <a href="#" class="button">Dataset & Starter Kit (Coming Soon)</a>
+      </div>
+
+      <div class="task">
+        <h3>2. Word / Gloss Recognition</h3>
+        <p>Classify isolated signs from short video clips or pose sequences into correct word/gloss labels.</p>
+        
+        <div class="video-container">
+          <div class="video-item">
+            <video autoplay muted loop playsinline>
+              <source src="assets/National_(Sign_2).mp4" type="video/mp4">
+            </video>
+            <div class="caption">Label: National</div>
+          </div>
+        </div>
+
+        <p><strong>Tracks:</strong> Video-based Recognition • Pose-based Recognition</p>
+        <p><strong>Evaluation:</strong> Top-1 Accuracy (primary), Top-5 Accuracy</p>
+        <a href="#" class="button">Dataset & Starter Kit (Coming Soon)</a>
+      </div>
+    <div class="task">
+        <h3>3. Word Presence Prediction</h3>
+        <p>Given a continuous sentence video/pose and a query word, predict whether the word appears in the signed sentence.</p>
+        
+        <div class="video-container">
+          <div class="video-item">
+            <video autoplay muted loop playsinline>
+              <source src="assets/National_(Sign_2).mp4" type="video/mp4">
+            </video>
+            <div class="caption"><strong>Query Word:</strong> National</div>
+          </div>
+          
+          <div class="video-item">
+            <video autoplay muted loop playsinline>
+              <source src="assets/The_ban_would_mean_she_can't_compete_in_any_national_or_other_domestic_events.mp4" type="video/mp4">
+            </video>
+            <div class="caption"><strong>Sentence Video</strong><br>Contains: <strong>National</strong> → <strong>Present</strong></div>
+          </div>
+        </div>
+
+        <p><strong>Tracks:</strong> Video-based • Pose-based</p>
+        <p><strong>Evaluation:</strong> Accuracy, Precision, Recall, F1 Score</p>
+        <a href="#" class="button">Dataset & Starter Kit (Coming Soon)</a>
+      </div>
+      <!-- <div class="task">
+        <h3>3. Word Presence Prediction</h3>
+        <p>Given a continuous sentence video/pose and a query word, predict whether the word appears in the signed sentence.</p>
+        
+        <div class="video-container">
+          <div class="video-item">
+            <video autoplay muted loop playsinline>
+              <source src="assets/National_(Sign_2).mp4" type="video/mp4">
+            </video>
+            <div class="caption"><strong>Query Word:</strong> National</div>
+          </div>
+          <div class="video-item">
+            <video autoplay muted loop playsinline>
+              <source src="assets/The_ban_would_mean_she_can't_compete_in_any_national_or_other_domestic_events.mp4" type="video/mp4">
+            </video>
+            <div class="caption"><strong>Sentence Video</strong><br>Contains: <strong>National</strong> → <strong>Present</strong></div>
+          </div>
+        </div> -->
+
+
+
+    </div>
+
+    <!-- Timeline -->
+    <div id="timeline" class="section">
+      <h2>Important Dates (Anywhere on Earth)</h2>
+      <table>
+        <tr><th>Event</th><th>Date</th></tr>
+        <tr><td>Website Launch</td><td>July 10, 2026</td></tr>
+        <tr><td>Official Launch + Starter Kit Release</td><td>July 31, 2026</td></tr>
+        <tr><td>Development Phase (Validation Leaderboard)</td><td>July 31 – Oct 31, 2026</td></tr>
+        <tr><td>Final Test Phase</td><td>Oct 31 – Nov 10, 2026</td></tr>
+        <tr><td>Results Announcement</td><td>November 20, 2026</td></tr>
+        <tr><td>Presentation at NeurIPS 2026</td><td>December 11–12, 2026</td></tr>
+      </table>
+    </div>
+
+    <!-- Participate -->
+    <div id="participate" class="section">
+      <h2>How to Participate</h2>
+      <ol>
+        <li>Download the Starter Kit after July 31, 2026</li>
+        <li>Register on Codabench platform</li>
+        <li>Train your models on provided datasets</li>
+        <li>Submit predictions on the hidden test set</li>
+      </ol>
+      <p><strong>Contact:</strong> isign.benchmark@gmail.com</p>
+      <a href="https://github.com/SignQuest" class="button" target="_blank">GitHub Organization →</a>
+    </div>
+
+    <!-- Organizers -->
+    <div id="organizers" class="section">
+      <h2>Organizing Team</h2>
+      
+      <table style="width: 100%; max-width: 900px; margin: 25px auto;">
+        <thead>
+          <tr>
+            <th style="width: 28%;">Name</th>
+            <th style="width: 25%;">Affiliation</th>
+            <th style="width: 47%;">Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Sanjeet Singh</strong></td>
+            <td>IIT Kanpur</td>
+            <td>sanjeet@cse.iitk.ac.in</td>
+          </tr>
+          <tr>
+            <td><strong>Abhinav Joshi</strong></td>
+            <td>IIT Kanpur</td>
+            <td>ajoshi@cse.iitk.ac.in</td>
+          </tr>
+          <tr>
+            <td><strong>Pokala Dattatreya</strong></td>
+            <td>IIT Kanpur</td>
+            <td>pokala24@cse.iitk.ac.in</td>
+          </tr>
+          <tr>
+            <td><strong>Jatin Bhusal</strong></td>
+            <td>IIT Kanpur</td>
+            <td>jatin@cse.iitk.ac.in</td>
+          </tr>
+
+          <tr>
+            <td><strong>Abhishek Kumar Srivastava</strong></td>
+            <td>ISLRTC, New Delhi</td>
+            <td>abhishek.aks@islrtc.nic.in</td>
+          </tr>
+          <tr>
+            <td><strong>Andesha Mangala</strong></td>
+            <td>ISLRTC, New Delhi</td>
+            <td>apsl.islrtc-depwd@gov.in</td>
+          </tr>
+          <tr>
+            <td><strong>C. V. Jawahar</strong></td>
+            <td>IIIT Hyderabad</td>
+            <td>jawahar@iiit.ac.in</td>
+          </tr>
+                    <tr>
+            <td><strong>Ashutosh Modi</strong></td>
+            <td>IIT Kanpur</td>
+            <td>ashutoshm@cse.iitk.ac.in</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 SignQuest – NeurIPS 2026 Competition</p>
+    <p>In collaboration with IIT Kanpur & Indian Sign Language Research and Training Centre (ISLRTC)</p>
+  </footer>
+
+</body>
+</html>
